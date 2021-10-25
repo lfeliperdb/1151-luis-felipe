@@ -5,33 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Repetições</title>
-    <link rel="stylesheet" href="sytle.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <style>
-        @charset "UTF-8";
+<style>
+    @charset "UTF-8";
 
-        body {
-            background-color: #382F2E;
-            font-family: Verdana, Geneva, Tahoma, sans-serif
-        }
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: darkgoldenrod;
+}
 
-        main {
-            width: 500px;
-            margin: auto;
-        }
-        section {
-            background-color: white;
-            padding: 10px;
-            margin: 10px;
-            border-radius: 10px;
-        }
+main {
+    width: 500px;
+    margin: auto;
+}
 
-        section#resultado {
-            visibility: hidden;
-        }
-        
-    </style>
+section {
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+section#resultado {
+    visibility: hidden;
+}
+</style>
     <main>
         <section id="formulario">
             <h1>Contador Especial</h1>
@@ -39,7 +39,7 @@
                 <label for="ini">Início</label>
                 <input type="number" name="ini" id="ini" value="0">
                 <br><label for="fim">Fim</label>
-                <input type="number" name="fim" id="fim" value="100"> 
+                <input type="number" name="fim" id="fim" value="100">
                 <br><label for="inc">Incremento</label>
                 <input type="number" name="inc" id="inc" value="1">
                 <br><input type="submit" value="Contar">
@@ -48,28 +48,28 @@
         <section id="resultado">
             <h2>Resultado</h2>
             <p id="contagem"></p>
-            <button onclick="fechar()"></button>
-        </section>    
+            <button onclick="fechar()">Fechar</button>
+        </section>
     </main>
     <script>
         function fechar() {
             let res = document.getElementById("resultado")
             res.style.visibility = "hidden"
         }
-
-        function contador () {
-            let ini = Number(document.getElementById(ini).value)
-            let fim = Number(document.getElementById(fim).value)
-            let inc = Number(document.getElementById(inc).value)
-
+        
+        function contador() { 
+            let ini = Number(document.getElementById("ini").value)
+            let fim = Number(document.getElementById("fim").value)
+            let inc = Number(document.getElementById("inc").value)
+        
             let res = document.getElementById("resultado")
             let saida = document.getElementById("contagem")
             res.style.visibility = "visible"
-
+        
             let c = ini
             saida.innerHTML = ``
             while (c <= fim) {
-                saida.innerHTML += `${c} &#x1F449;`
+                saida.innerHTML += `${c} &#x1F449; `
                 c += inc
             }
             saida.innerHTML += `&#x1F3C1;`
