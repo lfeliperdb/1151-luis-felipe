@@ -4,28 +4,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu primeiro site.</title>
+    <form action="salvar.php" method="get" onsubmit="return verifica()">
+    <title>Maior Valor</title>
+    <style>
+        body {
+            background-color: #87231C;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+ 
+        main {
+            background-color: blanchedalmond;
+            width: 300px;
+            padding: 10px;
+            border-radius: 10px;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
     <main>
-        <h1> Luis Felipe
-            <p>seja bem vindo ao meu site.</p>
-        </h1>
-        <h2>
-            <p>oi cara</p>
-        </h2>
-        <h3>
-            <p>tudo bem?</p>
-        </h3>
-        <h4>
-            <p>gol do gabigol</p>
-        </h4>
-        <h5>
-            <p>kkkkkkkkkk</p>
-        </h5>
-        <h6>
-            <p>ehjwhfh</p>
-        </h6>
+        <h1>Maior Valor</h1>
+        <form action="salvar.php" method="get" onsubmit="return verifica()"></form>
+        <label for="v1">Valor 1: </label>
+        <input type="number" name="v1" id="v1" min="0" max="100" value="0">
+ 
+        <br><br><label for="v2">Valor 2: </label>
+        <input type="number" name="v2" id="v2" min="0" max="100" value="0">
+ 
+        <br><br><input type="submit" value="Verificar">
+ 
+        </form>
+        <p id="res"Resultado final></p>
     </main>
+    <script>
+        function verifica() {
+            let num1 = Number(document.getElementById("v1").value)
+            let num2 = Number(document.getElementById("v2").value)
+ 
+            let final = document.getElementById("res")
+ 
+            if(num1 > num2) {
+                final.innerHTML = `O primeiro valor ${num1} é maior`
+            } else if (num2 > num1) {
+                final.innerHTML = `O segundo valor ${num2} é maior`
+            } else if (num1 == num2) {
+                final.innerHTML = 'Os dois valores são iguais'
+            }
+ 
+            return false
+        }
+    </script>
 </body>
 </html>
