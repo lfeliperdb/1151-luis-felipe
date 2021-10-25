@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repetições</title>
+    <link rel="stylesheet" href="sytle.css">
+</head>
+<body>
+    <style>
+        body {
+            background-color: #382F2E;
+            font-family: Verdana, Geneva, Tahoma, sans-serif
+        }
+
+        main {
+            background-color: white;
+            width: 300px;
+            padding: 10px;
+            border-radius: 10px;
+            margin: auto;
+        }
+    </style>
+    <main>
+        <section id="formulario">
+            <h1>Contador Especial</h1>
+            <form action="salvar.php" method="get" onsubmit="return contador()">
+                <label for="ini">Início</label>
+                <input type="number" name="ini" id="ini" value="0">
+                <br><label for="fim">Fim</label>
+                <input type="number" name="fim" id="fim" value="100"> 
+                <br><label for="inc">Incremento</label>
+                <input type="number" name="inc" id="inc" value="1">
+                <br><input type="submit" value="Contar">
+            </form>
+        </section>
+        <section id="resultado">
+            <h2>Resultado</h2>
+            <p id="contagem"></p>
+            <button onclick="fechar()"></button>
+        </section>    
+    </main>
+    <script src="funcionalidades.js"></script>
+</body>
+</html>
