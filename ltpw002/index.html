@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LTPW I</title>
+</head>
+<style>
+    body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: rgb(192, 146, 85);
+    }
+    main {
+        width: 550px;
+        margin: auto;
+        background-color: white;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    section {
+        width: 50px;
+        margin: auto;
+        background-color: white;
+        padding: 5px;
+        border-radius: 5px;
+    }
+</style>
+<body>
+    <main>
+        <h1>Controle Salarial de Funcionários.</h1>
+        <br><button onclick="con()">Controlar Salário.</button>
+    </main>
+    <script>
+        res = document.getElementById("saida")
+        frase = document.getElementById("frase")
+        res.style.visibility = "hidden"
+
+        function fechar() {
+            res.style.visibility = "hidden"
+        }
+        function reajustar() {
+           let nom = document.getElementById("nom").value
+           let sal = Number(document.getElementById("sal").value)
+           let por = Number(document.getElementById("por").value)
+
+           let aum = sal * reaj / 100
+           let novo = sal + aum
+ 
+         res.style.visibility = "visible"
+         frase.innerHTML = `O funcionário <strong>${nom}</strong> tinha o salário de R$${sal.toFixed(2)} Já hoje, com seu reajuste de ${por}, ele irá receber ${aum.toFixed(2)} a mais que anteriormente, totalizando <strong>R$${novo.toFixed(2)}</strong>`
+
+         return false
+        }
+        function con() {
+            let nome = window.prompt("Qual o nome do funcionário?")
+            let sala = window.prompt("Qual é o salário do funcionário?")
+            let porc = window.prompt("Qual será a porcentagem de aumento salarial?")
+        }
+    </script>
+    <section>
+    <section id="saida">
+        <h2>Novo Salário.</h2>
+        <p id="frase">Resultado...</p>
+        <button onclick="fechar()"></button>
+    </section>
+</body>
+</html>
