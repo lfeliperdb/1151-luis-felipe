@@ -6,24 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LTPW I</title>
 </head>
+<style>
+    main {
+        text-align: right;
+    }
+</style>
 <body>
-    <main>
         <h1>Calculadora Especial</h1>
         <button onclick="cal()">Calcular.</button>
-    </main>
+        <p id="res">Resposta.</p>
+        <main>
+            Luis Felipe Rodrigues de Barros. <br> Escola Técnica Oscar Tenório. <br> 1151.
+        </main>
     <script>
         let res = document.getElementById("res")
 
         function cal() {
-            let num = window.prompt("Digite o primeiro número")
-            let numb = window.prompt("Digite o segundo número")
+            let num = Number(prompt("Digite o primeiro número"))
+            let numb = Number(prompt("Digite o segundo número"))
 
             let som = num + numb
             let mul = num * numb
             let div = num / numb
-            let pot = num ^ numb
+            let pot = num ** numb
 
-            res.innerHTML = `Os resultados são <br>${som}<br>${mul}<br>${div}<br>${pot}`
+            res.innerHTML = `Números Escolhidos: <strong>${num}</strong> e <strong>${numb}</strong>.<br><br>Os resultados são: <br>Soma: ${som}.<br>Multiplicação: ${mul}.<br>Divisão: ${div}.<br>Potenciação: ${pot}.`
         }
     </script>
 </body>

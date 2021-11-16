@@ -47,11 +47,11 @@
 
         function but() {
             let nome = window.prompt("Qual o nome do funcionário?")
-            let sala = window.prompt("Qual é o salário do funcionário?")
-            let porc = window.prompt("Qual será a porcentagem de aumento salarial?")
+            let sala = Number(prompt("Qual é o salário do funcionário?"))
+            let porc = Number(prompt("Qual será a porcentagem de aumento salarial?"))
 
 
-            let aum = sala * porc / 100
+            let aum = (sala * porc) / 100
             let novo = sala + aum
  
             res.innerHTML = `O funcionário <strong>${nome}</strong> tinha o salário de R$${sala} Já hoje, com seu reajuste de ${porc}, ele irá receber ${aum} a mais que anteriormente, totalizando <strong>R$${novo}</strong>`
