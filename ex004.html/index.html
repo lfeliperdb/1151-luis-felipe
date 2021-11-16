@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LTPW I</title>
+</head>
+<style>
+    body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(192, 146, 85);
+}
+    main {
+    width: 550px;
+    margin: auto;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+    section {
+    width: 500px;
+    margin: auto;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    }
+    footer {
+        text-align: right;
+    }
+
+</style>
+<body>
+    <main>
+        <h1>Controle Salarial de Funcionários.</h1>
+        <br><button onclick="but()">Controlar Salário.</button>
+    </main>
+    <section>
+        <h2>Novo Salário.</h2>
+        <p id="res">Resultado...</p>
+        <footer>
+                Luis Felipe Rodrigues de Barros. <br> Escola Técnica Oscar Tenório. <br> 1151.
+        </footer>
+    </section>
+    <script>
+        let res = document.getElementById("res")
+
+        function but() {
+            let nome = window.prompt("Qual o nome do funcionário?")
+            let sala = window.prompt("Qual é o salário do funcionário?")
+            let porc = window.prompt("Qual será a porcentagem de aumento salarial?")
+
+
+            let aum = sala * porc / 100
+            let novo = sala + aum
+ 
+            res.innerHTML = `O funcionário <strong>${nome}</strong> tinha o salário de R$${sala} Já hoje, com seu reajuste de ${porc}, ele irá receber ${aum} a mais que anteriormente, totalizando <strong>R$${novo}</strong>`
+        }
+    </script>
+</body>
+</html>

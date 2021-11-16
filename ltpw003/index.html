@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LTPW I</title>
+</head>
+<body>
+    <main>
+        <h1>Calculadora Especial</h1>
+        <button onclick="cal()">Calcular.</button>
+    </main>
+    <script>
+        let res = document.getElementById("res")
+
+        function cal() {
+            let num = window.prompt("Digite o primeiro número")
+            let numb = window.prompt("Digite o segundo número")
+
+            let som = num + numb
+            let mul = num * numb
+            let div = num / numb
+            let pot = num ^ numb
+
+            res.innerHTML = `Os resultados são <br>${som}<br>${mul}<br>${div}<br>${pot}`
+        }
+    </script>
+</body>
+</html>
