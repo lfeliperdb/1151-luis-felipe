@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Amigos</title>
+</head>
+<body>
+    <h1>Cadastre seus amigos.</h1>
+    <button onclick="clicou()">Clique aqui.</button>
+    <p id="listagem">Listagem dos seus amigos</p>
+
+    <script>
+        let amigos = new Array()
+        let lst = document.getElementById("listagem")
+
+        function clicou () {
+            let nome 
+            let resposta
+            do {
+                nome = prompt("Digite o nome do amigo")
+
+                amigos.push(nome)
+
+                resposta = confirm("Quer cadastrar?")
+            }   while(resposta==true) 
+            lst.innerHTML = `Seus amigos são ${amigos}`
+        }
+    </script>
+</body>
+</html>
