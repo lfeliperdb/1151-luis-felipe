@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financiamento</title>
+</head>
+<body>
+    <h1>Financiamento de Seu Carro!</h1>
+    <label for="car">Nome do Veículo:</label>
+    <input type="text" name="car" id="car"> <br> <br>
+    <label for="val">Valor do Veículo:</label>
+    <input type="text" name="val" id="val"> <br><br>
+    <label for="par">Número de Parcelas:</label> 
+    <input type="number" name="par" id="par"> <button onclick="cal()">Calcule.</button> <br>
+    <h7>Escolher de 1 a 4 parcelas: não existem juros. <br>
+        De 5 a 12 parcelas: juros de 25%. <br>
+        De 13 a 24 parcelas: juros de 60% <br>
+        Mais de 24 parcelas: juros de 80% <br></h7>
+
+    <p id="res">Resultado.</p>
+</body>
+<script>
+    let res = document.getElementById("res")
+
+    function cal() {
+        let par = Number(document.getElementById("par").value)
+
+        while (1<4) {
+        let tot = num * (25/100)
+        }
+    }
+    res.innerHTML= `O valor total (${val}) somado com as parcelas (${par}) é um total de ${tot}`
+</script>
+</html>
