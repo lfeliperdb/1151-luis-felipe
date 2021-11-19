@@ -1,14 +1,35 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LTPW 1</title>
+    <title>LTPW I</title>
 </head>
 <body>
-    <script>
-        <label for="num">Primeiro Número"</label>
-    </script>
+    <h1>Calculadora Especial</h1>
+        <label for="num">Primeiro Número:</label> <br>
+        <input type="number" name="num" id="num" value="1" id="num"> <br>
+        <label for="numb">Segundo Número:</label><br>
+        <input type="number" name="num" id="numb" value="1"> <br><br>
+    
+        <button onclick="cal()">Calcular.</button>
+        <p id="res">Resultado...</p>
 </body>
+<script>
+     let res = document.getElementById("res")
+
+    function cal() {
+    let num = Number(document.getElementById("num").value)
+    let numb = Number(document.getElementById("numb"). value)
+
+    let som = num + numb
+    let mul = num * numb
+    let div = num / numb
+    let pot = num ** numb
+
+    res.innerHTML = `Números Escolhidos: <strong>${num}</strong> e <strong>${numb}</strong>.<br><br>Os resultados são: <br>Soma: ${som}.<br>Multiplicação: ${mul}.<br>Divisão: ${div}.<br>Potenciação: ${pot}.`
+    }
+
+</script>
 </html>
