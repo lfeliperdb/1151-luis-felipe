@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar Números</title>
+</head>
+<style>
+    body {
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: #640212; 
+    }
+
+    section {
+    width: 500px;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    border-radius: 10x;
+    }
+
+    main {
+    width: 200px;
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    border-radius: 10x;
+    }
+
+    main#resultado {
+        text-align: center;
+        visibility: hidden;
+    }
+</style>
+<body>
+    <section>
+        <h1>Gerador de Números.</h1>
+        <button onclick="gerar()">Gerar um valor</button>
+    
+    </section>
+    <main>
+        <p id="resultado">O resultado irá aparecer aqui.</p>
+    </main>
+        <script>
+            let res = document.getElementById("resultado") //Escopo Global
+
+            function gerar() {
+                let min = 1
+                let max = 10
+                let n = Math.floor(Math.random() * max + min) //Escopo Local
+
+                res.innerHTML = `Gerei o número ${n}`
+
+                /*Arredondamentos:
+                Math.floor() -
+                Math.round() =
+                Math.ceil() +
+                */
+            }
+    </script>
+</body>
+</html>
