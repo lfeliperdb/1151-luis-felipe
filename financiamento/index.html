@@ -8,12 +8,13 @@
 </head>
 <body>
     <h1>Financiamento de Seu Carro!</h1>
+    <form action="salvar.php" method="get" onsubmit="return calcjuros()">
     <label for="car">Nome do Veículo:</label>
     <input type="text" name="car" id="car"> <br> <br>
     <label for="val">Valor do Veículo:</label>
     <input type="text" name="val" id="val"> <br><br>
     <label for="par">Número de Parcelas:</label> 
-    <input type="number" name="par" id="par"> <button onclick="cal()">Calcule.</button> <br>
+    <input type="number" name="par" id="par"> <input type="submit" value="Calcular."><br>
     <h7>Escolher de 1 a 4 parcelas: não existem juros. <br>
         De 5 a 12 parcelas: juros de 25%. <br>
         De 13 a 24 parcelas: juros de 60% <br>
@@ -24,11 +25,15 @@
 <script>
     let res = document.getElementById("res")
 
-    function cal() {
+    function calcjuros() {
         let par = Number(document.getElementById("par").value)
 
         while (1<4) {
-        let tot = num * (25/100)
+        let tot = num
+        if (5 < 12) {
+        let tot = (num * 0.25) 
+        }
+
         }
     }
     res.innerHTML= `O valor total (${val}) somado com as parcelas (${par}) é um total de ${tot}`
