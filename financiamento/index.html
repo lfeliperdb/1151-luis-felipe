@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +10,12 @@
     <h1>Financiamento de Seu Carro!</h1>
     <form action="salvar.php" method="get" onsubmit="return calcjuros()">
     <label for="car">Nome do Veículo:</label>
-    <input type="text" name="car" id="car"> <br> <br>
+    <input type="text" name="carro" id="car"> <br> <br>
     <label for="val">Valor do Veículo:</label>
-    <input type="text" name="val" id="val"> <br><br>
+    <input type="number" name="valor" id="val"> <br><br>
     <label for="par">Número de Parcelas:</label> 
-    <input type="number" name="par" id="par"> <input type="submit" value="Calcular."><br>
+    <input type="number" name="parcela" id="par"> 
+    <input type="submit" value="Calcular." id="calcfi"><br>
     <h7>Escolher de 1 a 4 parcelas: não existem juros. <br>
         De 5 a 12 parcelas: juros de 25%. <br>
         De 13 a 24 parcelas: juros de 60% <br>
@@ -23,19 +24,28 @@
     <p id="res">Resultado.</p>
 </body>
 <script>
+function cal() {
+    let c = document.getElementById("car").value
     let res = document.getElementById("res")
-
-    function calcjuros() {
-        let par = Number(document.getElementById("par").value)
-
-        while (1<4) {
-        let tot = num
-        if (5 < 12) {
-        let tot = (num * 0.25) 
-        }
-
-        }
+    let p = Number(document.getElementById("val").value)
+    let parc = Number(document.getElementById("par").value) 
+    if (parc <=4) {
+        let parcs = p / parc
+        res.innerHTML = `O ${c} irá custar ${p} e cada parcela terá o valor de ${parcs}`
+    } if (parc >=5) {
+        let valor = p + (25/100 * p)
+        let parcs = valor / parc
+        res.innerHTML = `O ${c} irá custar ${p} e cada parcela terá o valor de ${parcs}`
+    } if (parc >=13) {
+        let valor = p + (60/100 * p)
+        let parcs = valor / parc
+        res.innerHTML = `O ${c} irá custar ${p} e cada parcela terá o valor de ${parcs}`
+    } if (parc >=25) {
+        let valor = p + (80/100 * p)
+        let parcs = valor / parc
+        res.innerHTML = `O ${c} irá custar ${p} e cada parcela terá o valor de ${parcs}`
     }
-    res.innerHTML= `O valor total (${val}) somado com as parcelas (${par}) é um total de ${tot}`
+    return false
+}
 </script>
 </html>
