@@ -1,0 +1,19 @@
+main {
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+#button {
+    font-size: 30px;
+    border-radius: 10px;
+    border-width: 3px;
+}
+#car {
+    font-size: 20px;
+}
+#val {
+    font-size: 20px;
+}
+#par {
+    font-size: 20px;
+}
