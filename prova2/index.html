@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação 2</title>
+</head>
+<body>
+    <style>
+        body {
+            background-image: linear-gradient(rgb(222, 226, 6), rgb(197, 129, 3));
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        main {
+            font-size: 30px;
+            margin-top: 100px;
+            text-align: center;
+        }
+        #qua {
+            font-size: 20px;
+        }
+        #button {
+            font-size: 20px;
+        }
+    </style>
+    <main>
+        <h1>Processe os salários dos seus funcionários</h1>
+        <form action="salvar.php" method="get" onsubmit="return calc()">
+            <label for="qua">Digite a quantidade de funcionários</label>
+            <input type="number" name="qua" id="qua" min="1" max="100">
+            <input type="submit" value="Calcule" id="button">
+            <p id="resu"></p>
+        </form>
+    </main>
+    <script>
+        let resu = document.getElementById("resu")
+        function calc() {
+            let qua = Number(document.getElementById("qua").value)
+            let contador = 1
+            let salarios = 0
+            let total = 0
+            let media = 0
+            let maior = 0
+            let menor = 0
+            while (contador <= qua) {
+                salarios = Number(prompt(`Digite o valor do salário do ${contador}º funcionário`))
+                total += salarios
+                media = total / qua
+                
+                if (contador == 1) {
+                    maior = salarios
+                    menor = salarios
+                } else if (salarios > maior) {
+                    maior = salarios
+                } else if (salario < menor) {
+                    menor = salarios
+                }
+                
+                contador++
+            }
+            resu.innerHTML = `O total pago por mês foi R$${total.toFixed(2)}<br>A média dos salários foi R$${media.toFixed(2)}<br>O maior salário pago foi R$${maior.toFixed(2)}<br>O menor salário pago foi R$${menor.toFixed(2)}`
+
+            return false
+        }
+    </script>
+</body>
+</html>
